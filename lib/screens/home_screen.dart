@@ -13,7 +13,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _currentIndex = 0;
+  int _currentIndex = 2; // Home button is at index 2
 
   @override
   Widget build(BuildContext context) {
@@ -237,18 +237,22 @@ class _HomeScreenState extends State<HomeScreen> {
   void _handleNavigation(int index) {
     switch (index) {
       case 0:
-        // Already on home
+        // Cities - Navigate to cities screen
+        // TODO: Implement cities screen
         break;
       case 1:
-        Navigator.pushNamed(context, '/reservations');
+        // News Blog - Navigate to news/blog screen
+        // TODO: Implement news/blog screen
         break;
       case 2:
-        // Cart/Shopping
+        // Home - Already on home
         break;
       case 3:
-        // Chat
+        // My Reservations
+        Navigator.pushNamed(context, '/reservations');
         break;
       case 4:
+        // My Profile
         Navigator.pushNamed(context, '/profile');
         break;
     }

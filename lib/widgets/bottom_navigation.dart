@@ -14,48 +14,57 @@ class CustomBottomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: AppConstants.backgroundColor,
+        border: Border(
+          top: BorderSide(
+            color: Colors.blue.withValues(alpha: 0.2),
+            width: 1,
+          ),
+        ),
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black12,
-            blurRadius: 8,
-            offset: Offset(0, -2),
+            color: Colors.black.withValues(alpha: 0.1),
+            blurRadius: 10,
+            offset: const Offset(0, -5),
           ),
         ],
       ),
       child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppConstants.defaultPadding,
-            vertical: AppConstants.smallPadding,
-          ),
+        child: Container(
+          height: 80,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
+              // Left side - Cities
               _buildNavItem(
-                icon: Icons.home,
-                label: AppConstants.homeLabel,
+                icon: Icons.location_on_outlined,
+                label: 'المدن',
                 index: 0,
               ),
+              // Left side - News Blog
               _buildNavItem(
-                icon: Icons.calendar_today,
-                label: AppConstants.bookingsLabel,
+                icon: Icons.article_outlined,
+                label: 'للدولة',
                 index: 1,
               ),
+              // Middle - Special Home Button
+              _buildSpecialHomeButton(2),
+              // Right side - My Reservations
               _buildNavItem(
-                icon: Icons.shopping_bag,
-                label: AppConstants.cartLabel,
-                index: 2,
-              ),
-              _buildNavItem(
-                icon: Icons.chat_bubble,
-                label: AppConstants.chatLabel,
+                icon: Icons.shopping_bag_outlined,
+                label: 'حجوزاتي',
                 index: 3,
               ),
+              // Right side - My Profile
               _buildNavItem(
-                icon: Icons.person,
-                label: AppConstants.profileLabel,
+                icon: Icons.person_outline,
+                label: 'حسابي',
                 index: 4,
               ),
             ],
@@ -101,6 +110,36 @@ class CustomBottomNavigation extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSpecialHomeButton(int index) {
+    final isSelected = currentIndex == index;
+    
+    return GestureDetector(
+      onTap: () => onTap(index),
+      child: Container(
+        width: 60,
+        height: 60,
+        decoration: BoxDecoration(
+          color: isSelected ? const Color(0xFF1E3A8A) : Colors.transparent,
+          shape: BoxShape.circle,
+          boxShadow: isSelected ? [
+            BoxShadow(
+              color: const Color(0xFF1E3A8A).withValues(alpha: 0.3),
+              blurRadius: 8,
+              offset: const Offset(0, 4),
+            ),
+          ] : null,
+        ),
+        child: Center(
+          child: Icon(
+            Icons.castle, // Crown/building icon
+            size: 28,
+            color: isSelected ? AppConstants.primaryGold : AppConstants.textSecondary,
+          ),
         ),
       ),
     );
