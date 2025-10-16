@@ -17,10 +17,7 @@ class CustomBottomNavigation extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppConstants.backgroundColor,
         border: Border(
-          top: BorderSide(
-            color: Colors.blue.withValues(alpha: 0.2),
-            width: 1,
-          ),
+          top: BorderSide(color: Colors.blue.withValues(alpha: 0.2), width: 1),
         ),
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(20),
@@ -48,11 +45,7 @@ class CustomBottomNavigation extends StatelessWidget {
                 index: 0,
               ),
               // Left side - News Blog
-              _buildNavItem(
-                icon: Icons.article_outlined,
-                label: 'للدولة',
-                index: 1,
-              ),
+              _buildNavItem(icon: Icons.article, label: 'المدونة', index: 1),
               // Middle - Special Home Button
               _buildSpecialHomeButton(2),
               // Right side - My Reservations
@@ -63,7 +56,7 @@ class CustomBottomNavigation extends StatelessWidget {
               ),
               // Right side - My Profile
               _buildNavItem(
-                icon: Icons.person_outline,
+                icon: Icons.account_circle_outlined,
                 label: 'حسابي',
                 index: 4,
               ),
@@ -80,7 +73,7 @@ class CustomBottomNavigation extends StatelessWidget {
     required int index,
   }) {
     final isSelected = currentIndex == index;
-    
+
     return GestureDetector(
       onTap: () => onTap(index),
       child: Container(
@@ -93,8 +86,8 @@ class CustomBottomNavigation extends StatelessWidget {
           children: [
             Icon(
               icon,
-              color: isSelected 
-                  ? AppConstants.primaryGold 
+              color: isSelected
+                  ? AppConstants.primaryGold
                   : AppConstants.textSecondary,
               size: 24,
             ),
@@ -103,8 +96,8 @@ class CustomBottomNavigation extends StatelessWidget {
               label,
               style: TextStyle(
                 fontSize: AppConstants.smallFontSize,
-                color: isSelected 
-                    ? AppConstants.primaryGold 
+                color: isSelected
+                    ? AppConstants.primaryGold
                     : AppConstants.textSecondary,
                 fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
               ),
@@ -117,7 +110,7 @@ class CustomBottomNavigation extends StatelessWidget {
 
   Widget _buildSpecialHomeButton(int index) {
     final isSelected = currentIndex == index;
-    
+
     return GestureDetector(
       onTap: () => onTap(index),
       child: Container(
@@ -126,19 +119,23 @@ class CustomBottomNavigation extends StatelessWidget {
         decoration: BoxDecoration(
           color: isSelected ? const Color(0xFF1E3A8A) : Colors.transparent,
           shape: BoxShape.circle,
-          boxShadow: isSelected ? [
-            BoxShadow(
-              color: const Color(0xFF1E3A8A).withValues(alpha: 0.3),
-              blurRadius: 8,
-              offset: const Offset(0, 4),
-            ),
-          ] : null,
+          boxShadow: isSelected
+              ? [
+                  BoxShadow(
+                    color: const Color(0xFF1E3A8A).withValues(alpha: 0.3),
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  ),
+                ]
+              : null,
         ),
         child: Center(
           child: Icon(
             Icons.castle, // Crown/building icon
             size: 28,
-            color: isSelected ? AppConstants.primaryGold : AppConstants.textSecondary,
+            color: isSelected
+                ? AppConstants.primaryGold
+                : AppConstants.textSecondary,
           ),
         ),
       ),
@@ -176,17 +173,19 @@ class CustomTabBar extends StatelessWidget {
           final index = entry.key;
           final tab = entry.value;
           final isSelected = selectedIndex == index;
-          
+
           return Expanded(
             child: GestureDetector(
               onTap: () => onTap(index),
               child: Container(
                 margin: const EdgeInsets.all(4),
                 decoration: BoxDecoration(
-                  color: isSelected 
-                      ? AppConstants.primaryGold 
+                  color: isSelected
+                      ? AppConstants.primaryGold
                       : Colors.transparent,
-                  borderRadius: BorderRadius.circular(AppConstants.borderRadius - 4),
+                  borderRadius: BorderRadius.circular(
+                    AppConstants.borderRadius - 4,
+                  ),
                 ),
                 child: Center(
                   child: Text(
@@ -194,8 +193,8 @@ class CustomTabBar extends StatelessWidget {
                     style: TextStyle(
                       fontSize: AppConstants.captionFontSize,
                       fontWeight: FontWeight.w600,
-                      color: isSelected 
-                          ? Colors.white 
+                      color: isSelected
+                          ? Colors.white
                           : AppConstants.textSecondary,
                     ),
                   ),

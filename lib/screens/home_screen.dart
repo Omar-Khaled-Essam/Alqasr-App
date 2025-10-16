@@ -27,19 +27,19 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             // Hero Section
             _buildHeroSection(),
-            
+
             // Explore Brands Section
             _buildBrandsSection(),
-            
+
             // Most Popular Hotels Section
             _buildPopularHotelsSection(),
-            
+
             // Promotional Banner
             _buildPromotionalBanner(),
-            
+
             // Latest News Section
             _buildNewsSection(),
-            
+
             const SizedBox(height: 100), // Space for bottom navigation
           ],
         ),
@@ -91,10 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [
-                    Colors.transparent,
-                    Colors.black.withOpacity(0.7),
-                  ],
+                  colors: [Colors.transparent, Colors.black.withOpacity(0.7)],
                 ),
               ),
             ),
@@ -141,7 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
         SizedBox(
-          height: 150,
+          height: 170,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.symmetric(
@@ -151,7 +148,11 @@ class _HomeScreenState extends State<HomeScreen> {
             itemBuilder: (context, index) {
               return BrandCard(
                 imageUrl: 'https://via.placeholder.com/120x120',
-                title: index == 0 ? 'القصر' : index == 1 ? 'جاردن ملينيوم' : 'فندق آخر',
+                title: index == 0
+                    ? 'القصر'
+                    : index == 1
+                    ? 'جاردن ملينيوم'
+                    : 'فندق آخر',
                 onTap: () {
                   // Navigate to brand details
                 },
@@ -181,7 +182,8 @@ class _HomeScreenState extends State<HomeScreen> {
               imageUrl: 'https://via.placeholder.com/400x200',
               title: index == 0 ? 'جاردن آنها' : 'جاردن أحد رفيده',
               location: index == 0 ? 'الرياض' : 'أحد رفيده',
-              price: '${293 + (index * 100)} ${AppConstants.sar} / ${AppConstants.night}',
+              price:
+                  '${293 + (index * 100)} ${AppConstants.sar} / ${AppConstants.night}',
               rating: '8.${index + 2}',
               onTap: () {
                 // Navigate to hotel details
@@ -218,11 +220,11 @@ class _HomeScreenState extends State<HomeScreen> {
           itemBuilder: (context, index) {
             return NewsCard(
               imageUrl: 'https://via.placeholder.com/80x80',
-              title: index == 0 
+              title: index == 0
                   ? 'افتتاح فرع جديد الفنادق القصر بالرياض المجموعة ملينيوم السعودية'
                   : index == 1
-                      ? 'أحدث التحديثات في خدمات الفنادق'
-                      : 'عروض خاصة لفصل الصيف',
+                  ? 'أحدث التحديثات في خدمات الفنادق'
+                  : 'عروض خاصة لفصل الصيف',
               date: '2023-07-17',
               onTap: () {
                 // Navigate to article
