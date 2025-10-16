@@ -54,7 +54,8 @@ class _CitiesScreenState extends State<CitiesScreen> {
           crossAxisCount: 2,
           crossAxisSpacing: AppConstants.smallPadding,
           mainAxisSpacing: AppConstants.smallPadding,
-          childAspectRatio: 1,
+          // Make tiles a bit taller to accommodate label below image
+          childAspectRatio: 0.85,
         ),
         itemCount: _cities.length,
         itemBuilder: (context, index) {
@@ -93,6 +94,8 @@ class _CitiesScreenState extends State<CitiesScreen> {
                       fontSize: AppConstants.smallFontSize,
                       color: AppConstants.textSecondary,
                     ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
               ],
