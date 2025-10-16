@@ -8,6 +8,9 @@ import 'screens/login_screen.dart';
 import 'screens/register_screen.dart';
 import 'screens/reservations_screen.dart';
 import 'screens/profile_screen.dart';
+import 'screens/cities_screen.dart';
+import 'screens/city_rooms_screen.dart';
+import 'screens/blog_screen.dart';
 
 void main() {
   runApp(const AlQasrApp());
@@ -36,6 +39,9 @@ class AlQasrApp extends StatelessWidget {
       routes: {
         '/': (context) => const SplashScreen(),
         '/home': (context) => const HomeScreen(),
+        '/cities': (context) => const CitiesScreen(),
+        '/city-rooms': (context) => const CityRoomsScreen(),
+        '/blog': (context) => const BlogScreen(),
         '/login': (context) => const LoginScreen(),
         '/register': (context) => const RegisterScreen(),
         '/reservations': (context) => const ReservationsScreen(),

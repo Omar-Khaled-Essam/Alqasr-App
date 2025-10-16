@@ -240,11 +240,11 @@ class _HomeScreenState extends State<HomeScreen> {
     switch (index) {
       case 0:
         // Cities - Navigate to cities screen
-        // TODO: Implement cities screen
+        Navigator.pushNamed(context, '/cities');
         break;
       case 1:
         // News Blog - Navigate to news/blog screen
-        // TODO: Implement news/blog screen
+        Navigator.pushNamed(context, '/blog');
         break;
       case 2:
         // Home - Already on home
