@@ -48,7 +48,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(height: AppConstants.largePadding),
-              
+
               // Welcome Text
               const Text(
                 'أنشئ حسابك الجديد',
@@ -59,9 +59,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 textAlign: TextAlign.center,
               ),
-              
+
               const SizedBox(height: AppConstants.smallPadding),
-              
+
               const Text(
                 'انضم إلينا واستمتع بخدمات الفنادق المميزة',
                 style: TextStyle(
@@ -70,9 +70,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 textAlign: TextAlign.center,
               ),
-              
+
               const SizedBox(height: AppConstants.largePadding * 2),
-              
+
               // Name Fields
               Row(
                 children: [
@@ -84,11 +84,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         labelText: 'الاسم الأول',
                         prefixIcon: const Icon(Icons.person_outline),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+                          borderRadius: BorderRadius.circular(
+                            AppConstants.borderRadius,
+                          ),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(AppConstants.borderRadius),
-                          borderSide: const BorderSide(color: AppConstants.primaryGold),
+                          borderRadius: BorderRadius.circular(
+                            AppConstants.borderRadius,
+                          ),
+                          borderSide: const BorderSide(
+                            color: AppConstants.primaryGold,
+                          ),
                         ),
                       ),
                       validator: (value) {
@@ -108,11 +114,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         labelText: 'اسم العائلة',
                         prefixIcon: const Icon(Icons.person_outline),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+                          borderRadius: BorderRadius.circular(
+                            AppConstants.borderRadius,
+                          ),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(AppConstants.borderRadius),
-                          borderSide: const BorderSide(color: AppConstants.primaryGold),
+                          borderRadius: BorderRadius.circular(
+                            AppConstants.borderRadius,
+                          ),
+                          borderSide: const BorderSide(
+                            color: AppConstants.primaryGold,
+                          ),
                         ),
                       ),
                       validator: (value) {
@@ -125,9 +137,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                 ],
               ),
-              
+
               const SizedBox(height: AppConstants.defaultPadding),
-              
+
               // Email Field
               TextFormField(
                 controller: _emailController,
@@ -138,11 +150,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   hintText: 'example@email.com',
                   prefixIcon: const Icon(Icons.email_outlined),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+                    borderRadius: BorderRadius.circular(
+                      AppConstants.borderRadius,
+                    ),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(AppConstants.borderRadius),
-                    borderSide: const BorderSide(color: AppConstants.primaryGold),
+                    borderRadius: BorderRadius.circular(
+                      AppConstants.borderRadius,
+                    ),
+                    borderSide: const BorderSide(
+                      color: AppConstants.primaryGold,
+                    ),
                   ),
                 ),
                 validator: (value) {
@@ -155,9 +173,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   return null;
                 },
               ),
-              
+
               const SizedBox(height: AppConstants.defaultPadding),
-              
+
               // Phone Field
               TextFormField(
                 controller: _phoneController,
@@ -168,11 +186,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   hintText: '+966 50 123 4567',
                   prefixIcon: const Icon(Icons.phone_outlined),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+                    borderRadius: BorderRadius.circular(
+                      AppConstants.borderRadius,
+                    ),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(AppConstants.borderRadius),
-                    borderSide: const BorderSide(color: AppConstants.primaryGold),
+                    borderRadius: BorderRadius.circular(
+                      AppConstants.borderRadius,
+                    ),
+                    borderSide: const BorderSide(
+                      color: AppConstants.primaryGold,
+                    ),
                   ),
                 ),
                 validator: (value) {
@@ -185,9 +209,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   return null;
                 },
               ),
-              
+
               const SizedBox(height: AppConstants.defaultPadding),
-              
+
               // Password Field
               TextFormField(
                 controller: _passwordController,
@@ -199,7 +223,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   prefixIcon: const Icon(Icons.lock_outlined),
                   suffixIcon: IconButton(
                     icon: Icon(
-                      _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                      _isPasswordVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off,
                     ),
                     onPressed: () {
                       setState(() {
@@ -208,11 +234,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     },
                   ),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+                    borderRadius: BorderRadius.circular(
+                      AppConstants.borderRadius,
+                    ),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(AppConstants.borderRadius),
-                    borderSide: const BorderSide(color: AppConstants.primaryGold),
+                    borderRadius: BorderRadius.circular(
+                      AppConstants.borderRadius,
+                    ),
+                    borderSide: const BorderSide(
+                      color: AppConstants.primaryGold,
+                    ),
                   ),
                 ),
                 validator: (value) {
@@ -225,9 +257,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   return null;
                 },
               ),
-              
+
               const SizedBox(height: AppConstants.defaultPadding),
-              
+
               // Confirm Password Field
               TextFormField(
                 controller: _confirmPasswordController,
@@ -239,7 +271,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   prefixIcon: const Icon(Icons.lock_outlined),
                   suffixIcon: IconButton(
                     icon: Icon(
-                      _isConfirmPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                      _isConfirmPasswordVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off,
                     ),
                     onPressed: () {
                       setState(() {
@@ -248,11 +282,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     },
                   ),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+                    borderRadius: BorderRadius.circular(
+                      AppConstants.borderRadius,
+                    ),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(AppConstants.borderRadius),
-                    borderSide: const BorderSide(color: AppConstants.primaryGold),
+                    borderRadius: BorderRadius.circular(
+                      AppConstants.borderRadius,
+                    ),
+                    borderSide: const BorderSide(
+                      color: AppConstants.primaryGold,
+                    ),
                   ),
                 ),
                 validator: (value) {
@@ -265,9 +305,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   return null;
                 },
               ),
-              
+
               const SizedBox(height: AppConstants.defaultPadding),
-              
+
               // Terms and Conditions
               Row(
                 children: [
@@ -310,24 +350,27 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                 ],
               ),
-              
+
               const SizedBox(height: AppConstants.largePadding),
-              
+
               // Register Button
               CustomButton(
+                height: 60,
                 text: AppConstants.register,
                 onPressed: _agreeToTerms ? _handleRegister : null,
                 isLoading: false,
               ),
-              
+
               const SizedBox(height: AppConstants.defaultPadding),
-              
+
               // Divider
               Row(
                 children: [
                   const Expanded(child: Divider()),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: AppConstants.defaultPadding),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppConstants.defaultPadding,
+                    ),
                     child: Text(
                       'أو',
                       style: TextStyle(
@@ -339,9 +382,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   const Expanded(child: Divider()),
                 ],
               ),
-              
+
               const SizedBox(height: AppConstants.defaultPadding),
-              
+
               // Social Register Buttons
               Row(
                 children: [
@@ -356,7 +399,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         padding: const EdgeInsets.symmetric(vertical: 12),
                         side: const BorderSide(color: AppConstants.borderColor),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+                          borderRadius: BorderRadius.circular(
+                            AppConstants.borderRadius,
+                          ),
                         ),
                       ),
                     ),
@@ -373,16 +418,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         padding: const EdgeInsets.symmetric(vertical: 12),
                         side: const BorderSide(color: AppConstants.borderColor),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+                          borderRadius: BorderRadius.circular(
+                            AppConstants.borderRadius,
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ],
               ),
-              
+
               const SizedBox(height: AppConstants.largePadding),
-              
+
               // Login Link
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -425,7 +472,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           backgroundColor: AppConstants.successColor,
         ),
       );
-      
+
       // Navigate to home screen
       Navigator.pushReplacementNamed(context, '/home');
     }

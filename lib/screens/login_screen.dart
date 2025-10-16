@@ -39,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(height: AppConstants.largePadding),
-              
+
               // Welcome Text
               const Text(
                 'مرحباً بك مرة أخرى',
@@ -50,9 +50,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 textAlign: TextAlign.center,
               ),
-              
+
               const SizedBox(height: AppConstants.smallPadding),
-              
+
               const Text(
                 'سجل دخولك للاستمتاع بخدماتنا المميزة',
                 style: TextStyle(
@@ -61,9 +61,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 textAlign: TextAlign.center,
               ),
-              
+
               const SizedBox(height: AppConstants.largePadding * 2),
-              
+
               // Email Field
               TextFormField(
                 controller: _emailController,
@@ -74,11 +74,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   hintText: 'example@email.com',
                   prefixIcon: const Icon(Icons.email_outlined),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+                    borderRadius: BorderRadius.circular(
+                      AppConstants.borderRadius,
+                    ),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(AppConstants.borderRadius),
-                    borderSide: const BorderSide(color: AppConstants.primaryGold),
+                    borderRadius: BorderRadius.circular(
+                      AppConstants.borderRadius,
+                    ),
+                    borderSide: const BorderSide(
+                      color: AppConstants.primaryGold,
+                    ),
                   ),
                 ),
                 validator: (value) {
@@ -91,9 +97,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
               ),
-              
+
               const SizedBox(height: AppConstants.defaultPadding),
-              
+
               // Password Field
               TextFormField(
                 controller: _passwordController,
@@ -105,7 +111,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   prefixIcon: const Icon(Icons.lock_outlined),
                   suffixIcon: IconButton(
                     icon: Icon(
-                      _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                      _isPasswordVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off,
                     ),
                     onPressed: () {
                       setState(() {
@@ -114,11 +122,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                   ),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+                    borderRadius: BorderRadius.circular(
+                      AppConstants.borderRadius,
+                    ),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(AppConstants.borderRadius),
-                    borderSide: const BorderSide(color: AppConstants.primaryGold),
+                    borderRadius: BorderRadius.circular(
+                      AppConstants.borderRadius,
+                    ),
+                    borderSide: const BorderSide(
+                      color: AppConstants.primaryGold,
+                    ),
                   ),
                 ),
                 validator: (value) {
@@ -131,9 +145,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
               ),
-              
+
               const SizedBox(height: AppConstants.defaultPadding),
-              
+
               // Remember Me & Forgot Password
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -151,7 +165,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       const Text(
                         'تذكرني',
-                        style: TextStyle(fontSize: AppConstants.captionFontSize),
+                        style: TextStyle(
+                          fontSize: AppConstants.captionFontSize,
+                        ),
                       ),
                     ],
                   ),
@@ -169,24 +185,27 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ],
               ),
-              
+
               const SizedBox(height: AppConstants.largePadding),
-              
+
               // Login Button
               CustomButton(
+                height: 60,
                 text: AppConstants.login,
                 onPressed: _handleLogin,
                 isLoading: false,
               ),
-              
+
               const SizedBox(height: AppConstants.defaultPadding),
-              
+
               // Divider
               Row(
                 children: [
                   const Expanded(child: Divider()),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: AppConstants.defaultPadding),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppConstants.defaultPadding,
+                    ),
                     child: Text(
                       'أو',
                       style: TextStyle(
@@ -198,9 +217,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   const Expanded(child: Divider()),
                 ],
               ),
-              
+
               const SizedBox(height: AppConstants.defaultPadding),
-              
+
               // Social Login Buttons
               Row(
                 children: [
@@ -215,7 +234,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         padding: const EdgeInsets.symmetric(vertical: 12),
                         side: const BorderSide(color: AppConstants.borderColor),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+                          borderRadius: BorderRadius.circular(
+                            AppConstants.borderRadius,
+                          ),
                         ),
                       ),
                     ),
@@ -232,16 +253,18 @@ class _LoginScreenState extends State<LoginScreen> {
                         padding: const EdgeInsets.symmetric(vertical: 12),
                         side: const BorderSide(color: AppConstants.borderColor),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+                          borderRadius: BorderRadius.circular(
+                            AppConstants.borderRadius,
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ],
               ),
-              
+
               const SizedBox(height: AppConstants.largePadding),
-              
+
               // Register Link
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -284,7 +307,7 @@ class _LoginScreenState extends State<LoginScreen> {
           backgroundColor: AppConstants.successColor,
         ),
       );
-      
+
       // Navigate to home screen
       Navigator.pushReplacementNamed(context, '/home');
     }

@@ -79,8 +79,12 @@ class _ReservationsScreenState extends State<ReservationsScreen>
         return ReservationCard(
           reservation: reservation,
           onTap: () => _showReservationDetails(reservation),
-          onCancel: type == 'upcoming' ? () => _cancelReservation(reservation) : null,
-          onModify: type == 'upcoming' ? () => _modifyReservation(reservation) : null,
+          onCancel: type == 'upcoming'
+              ? () => _cancelReservation(reservation)
+              : null,
+          onModify: type == 'upcoming'
+              ? () => _modifyReservation(reservation)
+              : null,
         );
       },
     );
@@ -89,7 +93,7 @@ class _ReservationsScreenState extends State<ReservationsScreen>
   Widget _buildEmptyState(String type) {
     String message;
     IconData icon;
-    
+
     switch (type) {
       case 'upcoming':
         message = 'لا توجد حجوزات قادمة';
@@ -308,7 +312,9 @@ class ReservationCard extends StatelessWidget {
                 children: [
                   // Hotel Image
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+                    borderRadius: BorderRadius.circular(
+                      AppConstants.borderRadius,
+                    ),
                     child: Image.network(
                       reservation['imageUrl'],
                       width: 80,
@@ -404,10 +410,14 @@ class ReservationCard extends StatelessWidget {
                         child: OutlinedButton(
                           onPressed: onModify,
                           style: OutlinedButton.styleFrom(
-                            side: const BorderSide(color: AppConstants.primaryGold),
+                            side: const BorderSide(
+                              color: AppConstants.primaryGold,
+                            ),
                             foregroundColor: AppConstants.primaryGold,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+                              borderRadius: BorderRadius.circular(
+                                AppConstants.borderRadius,
+                              ),
                             ),
                           ),
                           child: const Text('تعديل'),
@@ -423,7 +433,9 @@ class ReservationCard extends StatelessWidget {
                             backgroundColor: AppConstants.errorColor,
                             foregroundColor: Colors.white,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+                              borderRadius: BorderRadius.circular(
+                                AppConstants.borderRadius,
+                              ),
                             ),
                           ),
                           child: const Text('إلغاء'),
@@ -442,10 +454,8 @@ class ReservationCard extends StatelessWidget {
 class ReservationDetailsModal extends StatelessWidget {
   final Map<String, dynamic> reservation;
 
-  const ReservationDetailsModal({
-    Key? key,
-    required this.reservation,
-  }) : super(key: key);
+  const ReservationDetailsModal({Key? key, required this.reservation})
+    : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -476,7 +486,9 @@ class ReservationDetailsModal extends StatelessWidget {
                 children: [
                   // Hotel Image
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+                    borderRadius: BorderRadius.circular(
+                      AppConstants.borderRadius,
+                    ),
                     child: Image.network(
                       reservation['imageUrl'],
                       width: double.infinity,
@@ -528,16 +540,24 @@ class ReservationDetailsModal extends StatelessWidget {
                   // Reservation Details
                   _buildDetailRow('تاريخ الوصول', reservation['checkIn']),
                   _buildDetailRow('تاريخ المغادرة', reservation['checkOut']),
-                  _buildDetailRow('عدد الضيوف', '${reservation['guests']} ضيوف'),
+                  _buildDetailRow(
+                    'عدد الضيوف',
+                    '${reservation['guests']} ضيوف',
+                  ),
                   _buildDetailRow('عدد الغرف', '${reservation['rooms']} غرف'),
-                  _buildDetailRow('الحالة', _getStatusText(reservation['status'])),
+                  _buildDetailRow(
+                    'الحالة',
+                    _getStatusText(reservation['status']),
+                  ),
                   const SizedBox(height: AppConstants.largePadding),
                   // Total Price
                   Container(
                     padding: const EdgeInsets.all(AppConstants.defaultPadding),
                     decoration: BoxDecoration(
                       color: AppConstants.primaryGold.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+                      borderRadius: BorderRadius.circular(
+                        AppConstants.borderRadius,
+                      ),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

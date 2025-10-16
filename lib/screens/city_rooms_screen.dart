@@ -17,15 +17,15 @@ class _CityRoomsScreenState extends State<CityRoomsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
-    final String cityName = args != null && args['cityName'] != null ? args['cityName'] as String : 'أحد رفيده';
+    final args =
+        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+    final String cityName = args != null && args['cityName'] != null
+        ? args['cityName'] as String
+        : 'أحد رفيده';
     final String? heroImage = args != null ? args['imageUrl'] as String? : null;
 
     return Scaffold(
-      appBar: StatusAppBar(
-        title: cityName,
-        showBackButton: true,
-      ),
+      appBar: StatusAppBar(title: cityName, showBackButton: true),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,7 +34,9 @@ class _CityRoomsScreenState extends State<CityRoomsScreen> {
             _buildHero(heroImage),
 
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AppConstants.defaultPadding),
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppConstants.defaultPadding,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -63,7 +65,8 @@ class _CityRoomsScreenState extends State<CityRoomsScreen> {
 
                   // Sample rooms cards
                   HotelWidgets.roomSelectionCard(
-                    imageUrl: 'https://images.unsplash.com/photo-1505691723518-36a5ac3b2a59?q=80&w=1200&auto=format&fit=crop',
+                    imageUrl:
+                        'https://images.unsplash.com/photo-1505691723518-36a5ac3b2a59?q=80&w=1200&auto=format&fit=crop',
                     roomType: 'Standard',
                     roomTypeArabic: 'غرفة قياسية - القصر المِسْك',
                     price: 293,
@@ -76,7 +79,8 @@ class _CityRoomsScreenState extends State<CityRoomsScreen> {
                     amenities: const ['واي فاي', 'تلفاز', 'مكيف'],
                   ),
                   HotelWidgets.roomSelectionCard(
-                    imageUrl: 'https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?q=80&w=1200&auto=format&fit=crop',
+                    imageUrl:
+                        'https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?q=80&w=1200&auto=format&fit=crop',
                     roomType: 'Deluxe',
                     roomTypeArabic: 'غرفة ديلوكس - القصر المِسْك',
                     price: 420,
@@ -125,10 +129,7 @@ class _CityRoomsScreenState extends State<CityRoomsScreen> {
           children: [
             Positioned.fill(
               child: imageUrl != null
-                  ? Image.network(
-                      imageUrl,
-                      fit: BoxFit.cover,
-                    )
+                  ? Image.network(imageUrl, fit: BoxFit.cover)
                   : Container(color: AppConstants.primaryGold.withOpacity(0.3)),
             ),
             Positioned.fill(
@@ -154,7 +155,7 @@ class _CityRoomsScreenState extends State<CityRoomsScreen> {
                   fontSize: AppConstants.smallFontSize,
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -165,23 +166,28 @@ class _CityRoomsScreenState extends State<CityRoomsScreen> {
     final brands = ['القصر', 'القصر للمِسْك', 'جاردن أحد'];
 
     return SizedBox(
-      height: 80,
+      height: 90,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.symmetric(horizontal: AppConstants.defaultPadding),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppConstants.defaultPadding,
+        ),
         itemBuilder: (context, index) {
           return Column(
             children: [
               CircleAvatar(
                 radius: 28,
                 backgroundColor: AppConstants.primaryGold.withOpacity(0.15),
-                child: const Icon(Icons.castle, color: AppConstants.primaryGold),
+                child: const Icon(
+                  Icons.castle,
+                  color: AppConstants.primaryGold,
+                ),
               ),
               const SizedBox(height: 8),
               Text(
                 brands[index],
                 style: const TextStyle(fontSize: AppConstants.smallFontSize),
-              )
+              ),
             ],
           );
         },
