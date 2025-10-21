@@ -1,0 +1,32 @@
+# This file tracks properties of this Flutter project.
+# Used by Flutter tool to assess capabilities and perform upgrades etc.
+#
+# This file should be version controlled and should not be manually edited.
+
+version:
+  revision: "f1875d570e39de09040d1778e7c0c2d580fda545"
+  channel: "stable"
+
+project_type: app
+
+# Tracks metadata for the flutter migrate command
+migration:
+  platforms:
+    - platform: android
+      create_revision: f1875d570e39de09040d1778e7c0c2d580fda545
+      base_revision: f1875d570e39de09040d1778e7c0c2d580fda545
+    - platform: ios
+      create_revision: f1875d570e39de09040d1778e7c0c2d580fda545
+      base_revision: f1875d570e39de09040d1778e7c0c2d580fda545
+    - platform: linux
+      create_revision: f1875d570e39de09040d1778e7c0c2d580fda545
+      base_revision: f1875d570e39de09040d1778e7c0c2d580fda545
+    - platform: macos
+      create_revision: f1875d570e39de09040d1778e7c0c2d580fda545
+      base_revision: f1875d570e39de09040d1778e7c0c2d580fda545
+    - platform: web
+      create_revision: f1875d570e39de09040d1778e7c0c2d580fda545
+      base_revision: f1875d570e39de09040d1778e7c0c2d580fda545
+    - platform: windows
+      create_revision: f1875d570e39de09040d1778e7c0c2d580fda545
+      base_revision: f1875d570e39de09040d1778e7c0c2d580fda545
